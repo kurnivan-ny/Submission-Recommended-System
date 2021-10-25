@@ -88,15 +88,19 @@ Visualisasi data numerik dari dataset yang digunakan sebagai berikut.
 _Word Cloud_ merupakan salah satu metode untuk menampilkan data teks secara visual. Grafik ini populer dalam text mining karena mudah dipahami. Dengan menggunakan _word cloud_, gambaran frekuensi kata-kata dapat ditampilkan dalam bentuk yang menarik namun tetap informatif. Semakin sering satu kata digunakan, maka semakin besar pula ukuran kata tersebut ditampilkan dalam _word cloud_. _Word cloud_ dari dataset sebagai berikut.
 
 - Variabel Title
+
 ![download (5)](https://user-images.githubusercontent.com/72246401/138671223-654f282b-82bb-4cde-b0ed-ecf4426b349b.png)
 
 - Variabel Director
+
 ![download (6)](https://user-images.githubusercontent.com/72246401/138671218-545e42df-ba7f-48d9-bad8-003153880a41.png)
 
 - Variabel Cast
+
 ![download (7)](https://user-images.githubusercontent.com/72246401/138671211-49059f19-34a0-4c93-b594-f46519efd7ae.png)
 
 - Variabel Description
+
 ![download (8)](https://user-images.githubusercontent.com/72246401/138671230-45a3a30b-ce56-4ccb-9c36-f0e0cbe7ad9c.png)
 
 
