@@ -37,7 +37,7 @@ Solusi yang dapat dilakukan untuk memenuhi proyek ini sebagai berikut.
    ![consine similiarity](https://user-images.githubusercontent.com/72246401/138666015-487a70e2-d9c4-4159-a8ef-23fca8445c46.png)
 
 ## Data Understanding
-![Data Understanding]("https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png")
+![image](https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png)
 Informasi dataset sebagai berikut.
 
 | Jenis                   | Keterangan                                                                              |
