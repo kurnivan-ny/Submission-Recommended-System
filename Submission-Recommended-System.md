@@ -103,32 +103,15 @@ _Word Cloud_ merupakan salah satu metode untuk menampilkan data teks secara visu
 ## Data Preparation
 Persiapan Data _(Data Preparation)_ adalah proses mengubah atau mentransformasi fitur-fitur data ke dalam bentuk yang mudah diinterpretasikan dan diproses oleh model machine learning.
 
-Seperti yang sudah dijelaskan pada bagian _Solution Statements_, berikut adalah tahapan dalam melakukan pra_pemrosesan.
+Seperti yang sudah dijelaskan pada bagian _Solution Statements_, berikut adalah tahapan dalam melakukan _data preparation_.
 
-- Melakukan _Categorical Encoding_ 
+- Features List berupa memilih fitur yang akan digunakan.
+   Kami akan membuat daftar fitur yang akan kami gunakan. Kami hanya akan menggunakan fitur yang paling relevan bagi kami, mengingat masalah yang kami hadapi. Oleh karena itu, fitur yang kami pilih adalah title, type, director, cast, country, listed_in, description, dan rating.
+- _Data Cleaning_
+  Kami mengubah tipe data menjadi string dan melakukan sedikit preprocessing data dan mengganti setiap baris yang memiliki nilai NaN dengan spasi/string kosong, sehingga tidak menghasilkan kesalahan saat menjalankan kode.
+  Kami menggunakan RAKE-NLTK. RAKE (Rapid Automatic Keyword Extraction) adalah algoritma ekstraksi kata kunci independen domain yang mencoba menentukan frasa kunci falam tubuh teks dengan menganalisis frekuensi kemunculan kata dan kemunculannya bersama dengan kata lain dalam teks.
+  Kemudian digabungkan fitur berupa type, director, cast, country, listed_in, description, dan rating menjadi satu yaitu key_notes dan title tetap menjadi fitur sendiri. Setelah itu, kami mengubah tipe data menjadi string dan membuang tanda baca seperti , & - . Dan menjadikan semua string menjadi huruf kecil dengan lower.
 
-  _Categorical Encoding_ (Encoding fitur kategori) adalah proses mengubah data kategori menjadi data numerik. Untuk teknik Encoding fitur kategori menggunakan One-Hot Encoding. One-Hot Encoding untuk data nominal. Data nominal diklasifikasikan tanpa urutan atau peringkat. Untuk cara melakukan one-hot encoding dengan modul [pd.get_dummies](https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html) dari pandas.
-
-  Sebelum One-Hot Encoding.
-  
-  ![Sebelum One-Hot Encoding](https://user-images.githubusercontent.com/72246401/137140342-29ea8b4a-d6fd-4cb9-842e-3e7d28ed4b7c.jpg)
-  
-  Setelah One-Hot Encoding.
-  
-  ![Sesudah One-Hot Encoding](https://user-images.githubusercontent.com/72246401/137140333-0d18c3ee-3003-4973-85f0-11b7c4ba3911.jpg)
-  
-  
--  Melakukan **_Data Splitting_**
-
-  **_Data Splitting_** adalah pembagian dataset menjadi 2, yaitu data latih _(train data)_ dengan rasio 80% dan data test _(test data)_ dengan rasio 20%. data latih _(train data)_ berguna untuk pelatihan model dan data test _(test data)_ untuk menguji model. Pembagian dataset dilakukan modul [train_test_split](https://scikit-learn.org/0.24/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) dari scikit-learn.
-
-
-- Melakukan **standardisasi data** pada fitur numerik
-
-  Fungsi dari standarisasi nilai pada fitur numerik adalah untuk membuat numerical data pada varibel independen memiliki rentang nilai (scale) yang sama. Untuk melakukan standardisasi data, digunakan fungsi [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html). StandardScaler membuat mean menjadi 0 atau mendekati 0 dan 68% dari rentang data diantara -1 dan 0. StandarScaler mengubah distribusi data menjadi Distribusi Gaussian atau Distribusi Normal.
-  
-  ![Standardization](https://user-images.githubusercontent.com/72246401/137143994-61236a0b-ca40-49a8-bc94-9e2d9ea22cff.png)
-  
 
 ## Modeling
 Setelah melakukan Persiapan Data _(Data Preparation)_, maka tahap selanjutnya modeling. Modeling menggunakan 2 model yaitu pembuatan model _baseline_ dan pembuatan model yang dikembangkan.
