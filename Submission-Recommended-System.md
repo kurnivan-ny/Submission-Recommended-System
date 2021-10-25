@@ -67,28 +67,34 @@ Pada berkas yang diunduh yakni netflix_titles.csv terdapat 8.807 baris (records 
 
 Untuk mengetahui deskripsi variabel seperti tipe data, sample unik, dan jumlah sample unik sebagai berikut.
 
-![report](https://user-images.githubusercontent.com/72246401/137133814-115ca3f7-8819-478c-b661-a8c358383879.jpg)
+![Screenshot (2005)](https://user-images.githubusercontent.com/72246401/138668317-36adc883-8fa0-4281-92c4-ec4b2d767289.png)
 
-Terdapat 7 data kategori bertipe object dan 14 data numerik bertipe int64 dan float64. Kemudian terdapat visualisasi data kategori sebagai berikut.
+Visualisasi data numerik dari dataset yang digunakan sebagai berikut.
 
-![categorical](https://user-images.githubusercontent.com/72246401/137133807-76a4f644-cb01-42c2-ad60-ead14f71ed60.png)
+![newplot](https://user-images.githubusercontent.com/72246401/138670626-e9670235-18c6-4f69-9b01-543027b51953.png)
 
-Visualisasi data numerik sebagai berikut.
+![newplot (1)](https://user-images.githubusercontent.com/72246401/138670624-f66477c9-c0a6-4685-97d3-0023ad516191.png)
 
-![numerical](https://user-images.githubusercontent.com/72246401/137133956-b0eeb3bf-fc61-4c0d-a25e-4870f2ced5e1.png)
+![newplot (2)](https://user-images.githubusercontent.com/72246401/138670622-b6deee58-c30d-4a54-a1c8-2bd2801143d9.png)
 
-Visualisasi distribusi data pada kolom dengan fitur numerik dan antar fitur numrerik sebagai berikut.
+![newplot (3)](https://user-images.githubusercontent.com/72246401/138670617-ab70c4ae-6dde-4b6d-8ed5-d390e11acd3c.png)
 
-![korelasi](https://user-images.githubusercontent.com/72246401/137133831-63f3a847-525c-43bd-8da3-10003aabccdc.png)
+![newplot (4)](https://user-images.githubusercontent.com/72246401/138670633-e680c38e-2f36-423f-b775-da8d578ef273.png)
 
-Visualisasi heatmap dari korelasi antar firut numerik sebagai berikut.
+![newplot (5)](https://user-images.githubusercontent.com/72246401/138670630-b6cb27bf-0f00-45da-9075-56ce817a670b.png)
 
-![heatmap](https://user-images.githubusercontent.com/72246401/137133827-598f6483-8ebb-4129-ae06-564485dbb2a2.png)
+![newplot (6)](https://user-images.githubusercontent.com/72246401/138670628-8a1eff23-2528-4233-b7f6-880ab5b40b5a.png)
 
-Keterangan heatmap:
-- Semakin mendekati 1 maka semakin tinggi korelasi antar firut numerik
-- Semakin mendekati 0 maka korelasi antar firut numerik mendekati netral
-- Semakin mendekati -1 maka semakin rendah korelasi antar firut numerik
+_Word Cloud_ merupakan salah satu metode untuk menampilkan data teks secara visual. Grafik ini populer dalam text mining karena mudah dipahami. Dengan menggunakan _word cloud_, gambaran frekuensi kata-kata dapat ditampilkan dalam bentuk yang menarik namun tetap informatif. Semakin sering satu kata digunakan, maka semakin besar pula ukuran kata tersebut ditampilkan dalam _word cloud_. _Word cloud_ dari dataset sebagai berikut.
+
+![download (5)](https://user-images.githubusercontent.com/72246401/138671223-654f282b-82bb-4cde-b0ed-ecf4426b349b.png)
+
+![download (6)](https://user-images.githubusercontent.com/72246401/138671218-545e42df-ba7f-48d9-bad8-003153880a41.png)
+
+![download (7)](https://user-images.githubusercontent.com/72246401/138671211-49059f19-34a0-4c93-b594-f46519efd7ae.png)
+
+![download (8)](https://user-images.githubusercontent.com/72246401/138671230-45a3a30b-ce56-4ccb-9c36-f0e0cbe7ad9c.png)
+
 
 ## Data Preparation
 Persiapan Data _(Data Preparation)_ adalah proses mengubah atau mentransformasi fitur-fitur data ke dalam bentuk yang mudah diinterpretasikan dan diproses oleh model machine learning.
