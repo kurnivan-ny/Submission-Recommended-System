@@ -3,67 +3,41 @@
 - Project Overview
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png">
+  <img src="https://user-images.githubusercontent.com/72246401/137863762-394d381d-7312-4ece-806a-cdf8565baddf.png">
 </p>
 
 Pada proyek sistem rekomendasi, kita akan membuat sistem rekomendasi movie atau tv show di Netflix. 
-Netflix adalah layanan streaming berbasis langganan yang memungkinkan anggota kami menonton acara TV dan film tanpa iklan di perangkat yang terhubung ke Internet[[1](https://help.netflix.com/id/node/412)]. Setiap hari Netflix dibanjiri oleh penggemar movie atau tv show untuk menonton movie atau tv show yang disukai. 
+Netflix adalah layanan streaming berbasis langganan yang memungkinkan anggota kami menonton acara TV dan film tanpa iklan di perangkat yang terhubung ke Internet[[1](https://help.netflix.com/id/node/412)]. Setiap hari Netflix dibanjiri oleh pengguna yang gemar movie atau tv show untuk menonton secara _streaming_ movie atau tv show yang disukai. Namun terlalu banyaknya movie atau tv show yang mengakibatkan kebingungan yang dihadapi oleh pengguna. Oleh karena itu, diperlukan sistem rekomendasi yang digunakan untuk memberikan rekomendasi movie atau tv show berdasarkan pengalaman pengguna sebelumnya.
 
 ## Business Understanding
 
 ### Problem Statements
 Berdasarkan latar belakang diatas, ada beberapa rincian masalah yang dapat diselesaikan pada proyek ini sebagai berikut.
-- Bagaimana cara  melakukan pra-pemrosesan data agar dapat digunakan dengan baik pada model _machine learning_?
-- Bagaimana cara membuat model _machine learning_ untuk mengklasifikasikan kisaran harga ponsel?
+- Sistem rekomendasi apa yang diterapkan pada proyek kali ini?
+- Bagaimana cara membuat sistem rekomendasi movie atau tv show untuk pengguna di Netflix?
 
 ### Goals
 Tujuan dari dibuatnya proyek ini sebagai berikut.
-- Melakukan pra-pemrosesan data agar dapat digunakan dengan baik pada model _machine learning_.
-- membuat model _machine learning_ untuk mengklasifikasikan kisaran harga ponsel yang memiliki tingkat akurasi > 80%.
+- Membuat sistem rekomendasi movie atau tv show untuk pengguna di Netflix.
+- Memberikan rekomendasi movie atau tv show yang kemungkinan disukai pengguna berdasarkan pengalaman pengguna sebelumnya.
 
 ### Solution statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini sebagai berikut.
-- Untuk pra-pemrosesan dapat dilakukan beberapa teknik sebagai berikut.
-    - Melakukan _Categorical Encoding_ yaitu proses mengubah data kategori menjadi data numerik dengan **_One-Hot Encoding_**
-    - Melakukan **_Data Splitting_** berupa membagi dataset menjadi 2, yaitu data latih _(train data)_ dengan rasio 80% dan data test _(test data)_ dengan rasio 20%.
-    - Melakukan **standardisasi data** pada fitur numerik dengan **StandarScaler**.
-  Untuk pra-pemrosesan dilakukan pada tahap Persiapan Data _(Data Preparation)_.
-- Untuk pembuatan model menggunakan algoritma **_Support Vector Machine (SVM)_** sebagai model _baseline_. Algoritma tersebut dipilih karena dimensi data tinggi, jumlah data hasil observasi banyak, dan cocok untuk kasus klasifikasi. **_Support Vector Machine (SVM)_** digunakan untuk mencari _hyperplane_ terbaik dengan memaksimalkan jarak antar kelas. _Hyperplane_ adalah sebuah fungsi yang dapat digunakan untuk pemisah antar kelas. Tujuan dari algoritma SVM adalah untuk menemukan _hyperplane_ terbaik dalam ruang berdimensi-N (ruang dengan N-jumlah fitur) yang berfungsi sebagai pemisah yang jelas bagi titik-titik data input. Untuk proyek kami menggunakan SVM Klasifikasi non Linear. Cara kerja **_Support Vector Machine (SVM)_** Klasifikasi non Linear sebagai berikut.
-    - Memuat data.
-    - Transformasikan data menjadi ruang baru sehingga batas linier dapat digunakan untuk memisahkan tupel.
-    - Untuk pemisahan data menggunakan beberapa fungsi kernel berikut.
-        - RBF (Radial Basis Function) atau Gaussian kernel
-        
-            ![gaussian-kernel](https://user-images.githubusercontent.com/72246401/137120936-2bec6b2b-0df2-4a3b-a94b-e95a7c93560b.png)
-            
-        - Polinomial
-        
-            ![polynomial-kernel](https://user-images.githubusercontent.com/72246401/137120934-9b86cf3e-ec68-4b4b-affd-52674ab3031d.png)
-            
-        - Sigmoid
-        
-            ![sigmoid-kernel](https://user-images.githubusercontent.com/72246401/137120935-4c1b263b-69f7-4709-9708-2283a2b3a833.png)
-            
-    - Proses pembelajaran:
-        - Fase _training_:
-            - Minimize:
-              
-                <img src="https://user-images.githubusercontent.com/72246401/137123514-dc434933-7f57-4f2f-87c4-d696478111ab.png" width="120">
-                
-            - Target:
-            
-                <img src="https://user-images.githubusercontent.com/72246401/137123516-74d6939e-37fb-486a-83c5-c284eb1e49f2.png" width="300">
-                
-        - Fase _testing_:
-            
-            <img src="https://user-images.githubusercontent.com/72246401/137123510-107b5ee1-a0ef-4a64-a420-457a7c4c504a.png" width="300">
-   
-   Selain itu, terdapat kelebihan dan kekurangan dari algoritma **_Support Vector Machine (SVM)_** sebagai berikut[[3](https://www.dqlab.id/perbandingan-support-vector-machine-dan-decision-tree)].
-   - Kelebihan: Pengklasifikasi SVM menawarkan akurasi tinggi dan bekerja dengan baik dengan ruang dimensi tinggi. SVM pengklasifikasi pada dasarnya menggunakan subset dari poin pelatihan sehingga hasilnya menggunakan memori yang sangat sedikit.
-   - Kekurangan: Mereka memiliki waktu pelatihan yang tinggi sehingga dalam praktiknya tidak cocok untuk kumpulan data yang besar. Lain kerugiannya adalah pengklasifikasi SVM tidak berfungsi dengan baik dengan kelas yang tumpang tindih.
+
+![Untitled Diagram drawio (4)](https://user-images.githubusercontent.com/72246401/138665219-72ec8c91-055c-4926-8db7-aff3bd8196b7.png)
+
+Solusi yang dapat dilakukan untuk memenuhi proyek ini sebagai berikut.
+
+- Untuk bagian _Data Preparation_ dilakukan beberapa teknik sebagai berikut.
+  - Features List berupa memilih fitur yang akan digunakan.
+  - _Data Cleaning_ berupa mengisi data kosong pada kolom, membuang tanda baca, menyamakan ukuran huruf, dan ekstraksi kata kunci dengan RAKE (Rapid Automatic Keyword Extraction).
+- Untuk bagian Model Sistem Rekomendasi menggunakan _content based filtering_ karena dataset tidak terdapat rating. Oleh karena itu, sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna berdasarkan pengalaman pengguna sebelumnya.
+- Untuk bagian Evaluasi Sistem Rekomendasi menggunakan _consine similiarity_. _Cosine similarity_ mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama. Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity. _Cosine similarity_ dirumuskan sebagai berikut.
+
+   ![consine similiarity](https://user-images.githubusercontent.com/72246401/138666015-487a70e2-d9c4-4159-a8ef-23fca8445c46.png)
 
 ## Data Understanding
-![Data Understanding](https://user-images.githubusercontent.com/72246401/137133817-6e689b92-276b-4834-a367-c98b925ea28c.png)
+![Data Understanding]("https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png")
 Informasi dataset sebagai berikut.
 
 | Jenis                   | Keterangan                                                                              |
