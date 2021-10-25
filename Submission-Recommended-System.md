@@ -3,7 +3,7 @@
 - Project Overview
 
 <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png">
+  <img src="https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png">
 </p>
 
 Pada proyek sistem rekomendasi, kita akan membuat sistem rekomendasi movie atau tv show di Netflix. 
