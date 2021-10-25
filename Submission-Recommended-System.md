@@ -40,12 +40,13 @@ Solusi yang dapat dilakukan untuk memenuhi proyek ini sebagai berikut.
 ![image](https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png)
 Informasi dataset sebagai berikut.
 
-| Jenis                   | Keterangan                                                                              |
-| ----------------------- | --------------------------------------------------------------------------------------- |
-| Sumber                  | Kaggle Dataset : [Mobile Price Classification](https://www.kaggle.com/iabhishekofficial/mobile-price-classification?select=train.csv)|
-| Kategori                | Bisnis dan Klasifikasi                                                                  |
-| Rating Penggunaan       | 7.1 (Gold)                                                                              |
-| Jenis dan Ukuran Berkas | CSV (122.4 kB)                                                                          |
+| Jenis | Keterangan |
+| :--- | :--- |
+| Sumber | Kaggle Dataset : [Netflix Movies and TV Shows](https://www.kaggle.com/shivamb/netflix-shows)|
+| Lisensi | CC0: Public Domain |
+| Kategori | movies and tv shows |
+| Rating Penggunaan | 10.0 (Gold) |
+| Jenis dan Ukuran Berkas | CSV (3.4 MB) |
 
 Pada berkas yang diunduh yakni train.csv terdapat 2.000 baris (records atau jumlah pengamatan) dan 21 kolom dalam dataset. Berdasarkan informasi dari dataset, variabel pada Mobile Price Classification sebagai berikut.
 
