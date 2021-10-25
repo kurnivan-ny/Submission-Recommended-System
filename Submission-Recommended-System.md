@@ -138,11 +138,13 @@ Setelah melakukan Persiapan Data _(Data Preparation)_, maka tahap selanjutnya mo
   Pada tahap ini, saya menggunakan modul dari scikit-learn yaitu [TF-IDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html).
   
 ## Evaluation
-Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan  _consine similiarity_.
+Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan  [_consine similiarity_](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html).
 - _Consine Similiarity_ dari CountVectorizer
+
 ![Screenshot (2010)](https://user-images.githubusercontent.com/72246401/138682396-9ea88f41-8c73-4e7f-91e3-59930deb6894.png)
 
 - _Consine Similiarity_ dari TF-IDF Vectorizer
+
 ![Screenshot (2012)](https://user-images.githubusercontent.com/72246401/138682391-0432dd5e-9d29-44f2-be2b-3c086fba9d44.png)
 
 Dari rekomendasi yang diberikan, rekomendasi dari TF-IDF Vectorizer lebih cocok menurut saya daripada rekomendasi dari CountVectorizer. Karena TF-IDF lebih baik daripada Count Vectorizers karena tidak hanya berfokus pada frekuensi kata yang ada dalam korpus tetapi juga memberikan pentingnya kata tersebut. Kami kemudian dapat menghapus kata-kata yang kurang penting untuk analisis, sehingga membuat model bangunan kurang kompleks dengan mengurangi dimensi input.
