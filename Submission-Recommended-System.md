@@ -116,73 +116,35 @@ Seperti yang sudah dijelaskan pada bagian _Solution Statements_, berikut adalah 
 
 
 ## Modeling
-Setelah melakukan Persiapan Data _(Data Preparation)_, maka tahap selanjutnya modeling. Modeling menggunakan 2 model yaitu pembuatan model _baseline_ dan pembuatan model yang dikembangkan.
+Setelah melakukan Persiapan Data _(Data Preparation)_, maka tahap selanjutnya modeling. Modeling untuk sistem rekomendasi _Content Based Filtering_ menggunakan CountVectorizer dan TF-IDF Vectorizer.
 
-- Model _baseline_
+- CountVectorizer
 
-  Pada tahap ini, saya membuat model dasar dengan menggunakan modul dari scikit-learn yaitu [SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) dengan parameter _default_. Kemudian dilakukan prediksi pada data test.
+  Count Vectorizer adalah cara untuk mengubah serangkaian string tertentu menjadi representasi frekuensi. Count Vectorizer dapat membantu dalam memahami jenis teks dengan frekuensi kata-kata di dalamnya. Namun mempunyai kelemahan sebagai berikut:
+  - Ketidakmampuan dalam mengidentifikasi kata-kata yang lebih penting dan kurang penting untuk dianalisis.
+  - Hanya mempertimbangkan kata-kata yang berlimpah di corpus sebagai kata yang paling signifikan secara statistik.
+  - Tidak mengindentifikasi hubungan antar kata seperti kesamaan linguistik antar kata.
+  Pada tahap ini, saya menggunakan modul dari scikit-learn yaitu [Count Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html).
 
-- Model yang dikembangkan
+- TF-IDF Vectorizer
 
-  Setelah melihat kinerja dari model _baseline_, untuk model dapat bekerja lebih optimal maka diperlukan _Hyper Parameter Tuning_. _Hyper Parameter Tuning_ digunakan untuk mencari parameter terbaik yang akan diterapkan pada model _baseline_. _Hyper Parameter Tuning_ menggunkan  [_Grid Search Cross Validation (CV)_](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html). _Grid Search Cross Validation (CV)_ adalah metode pemilihan kombinasi model dan hyperparameter dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi. Pada model SVC, parameter yang di _Grid Search CV_ adalah c, gamma, dan kernel. C merupakan parameter regularisasi, gamma merupakan koefisien kernel, dan kernel menggunakan rbf.
+  TF-IDF Vectorizer (Term Frequency -  Inverse Document Frequency) adalah statistik yang didasarkan pada frekuensi kata dalam korpus tetapi juga memberikan representasi numerik tentang betapa pentingnya sebuah kata untuk analisis statistik.
+  TF-IDF lebih baik daripada Count Vectorizers karena tidak hanya berfokus pada frekuensi kata yang ada dalam korpus tetapi juga memberikan pentingnya kata tersebut. Kami kemudian dapat menghapus kata-kata yang kurang penting untuk analisis, sehingga membuat model bangunan kurang kompleks dengan mengurangi dimensi input.
+  TF-IDF didasarkan pada logika bahwa kata-kata yang terlalu banyak dalam korpus dan kata-kata yang terlalu jarang keduanya tidak penting secara statistik untuk menemukan suatu pola. Faktor logaritma dalam TF-IDF secara matematis menghukum kata-kata yang terlalu banyak atau terlalu jarang dalam korpus dengan memberikan nilai TF-IDF yang rendah.
+  Pada tahap ini, saya menggunakan modul dari scikit-learn yaitu [TF-IDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html).
   
 ## Evaluation
-Pada proyek ini, kami menggunakan _confusion matriks_ dan _classification report_ untuk mengevalusasi model.
-- _Confusion Matriks_
-  
-  _Confusion matriks_ merupakan tabel untuk memvisualisasikan performa model prediksi. Setiap entri dalam _confusion matriks_ menunjukkan jumlah prediksi yang dibuat oleh model yang mengklasifikasikan kelas dengan benar atau salah.
-  
-  ![cf multiclass](https://user-images.githubusercontent.com/72246401/137152262-bec4eb6b-d394-4536-a0a1-0562479e0980.png)
-  
-  Keterangan:
-    - True Positif: Ini mengacu pada jumlah prediksi di mana pengklasifikasi dengan benar memprediksi kelas positif sebagai positif.
-    - False Positive: Ini mengacu pada jumlah prediksi di mana pengklasifikasi salah memprediksi kelas negatif sebagai positif.
-    - False Negative: Ini mengacu pada jumlah prediksi di mana pengklasifikasi salah memprediksi kelas positif sebagai negatif.
-    - True Negative: Ini mengacu pada jumlah prediksi di mana pengklasifikasi dengan benar memprediksi kelas negatif sebagai negatif.
-  
-  Berikut dibawah ini merupakan formula untuk mengukur parameter yang digunakan dalam menilai kinerja model.
-  |  | Formula | Penjelasan |
-  | :---: | :---: | :---: |
-  | Accuracy | ![accuracy](https://user-images.githubusercontent.com/72246401/137153643-c8ef8b9e-8e90-4044-9393-e4b01dc5a24f.png) | Nilai ketepatan model dalam memprediksi data dengan data yang sebenarnya |
-  | Precission | ![precision](https://user-images.githubusercontent.com/72246401/137153668-55d6752a-056e-491d-a108-efb468bf7b8a.png) | Menghitung seberapa baik model memprediksi label positif terhadap semua prediksi model berlabel positif |
-  | Recall (Sensivity) | ![recall](https://user-images.githubusercontent.com/72246401/137153665-dfc779d7-cac1-4f23-af93-988e33fda6a5.png) |  Menghitung seberapa baik model memprediksi label positif terhadap semua label data positif |
-  | F1 Score | ![F1-Score](https://user-images.githubusercontent.com/72246401/137153660-2a34b4bf-e121-4afa-93bd-ed3dd4f02400.png) | Menghitung seberapa baik hasil prediksi model (precision) dan seberapa lengkap hasil prediksinya (recall) |
-  
- 
- _Condusion Matriks_ pada model _baseline_ dan model yang dikembangkan dapat dilihat dibawah ini.
- 
- - Model _baseline_
+Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan  _consine similiarity_.
+- _Consine Similiarity_ dari CountVectorizer
+![Screenshot (2010)](https://user-images.githubusercontent.com/72246401/138682396-9ea88f41-8c73-4e7f-91e3-59930deb6894.png)
 
-  ![cf_base model](https://user-images.githubusercontent.com/72246401/137133825-04434b83-0a32-4b59-b5f7-868ded7e9342.png)
+- _Consine Similiarity_ dari TF-IDF Vectorizer
+![Screenshot (2012)](https://user-images.githubusercontent.com/72246401/138682391-0432dd5e-9d29-44f2-be2b-3c086fba9d44.png)
 
-- Model yang dikembangkan
-
-  ![cf_best model](https://user-images.githubusercontent.com/72246401/137133824-3ae3c976-a96e-4a2b-9a0b-db9082ec6060.png)
-  
-  Dapat dilihat bahwa model _baseline_ memiliki _False Positif_ dan _False Positif_ yang lebih besar dibandingkan dengan model yang dikembangkan.
-
-- _Classification Report_
-  
-  Classification report digunakan untuk mengukur kualitas prediksi dari algoritma klasifikasi. Classification report menampilkan nilai akurasi, _f1 score_, _recall_, dan _precision_ untuk model.
-
-  Hasil dari model _baseline_ sebagai berikut.
-  
-  ![cf_model baseline](https://user-images.githubusercontent.com/72246401/137147015-29a593c9-99b4-43e4-9e43-9394135eeaa7.jpg)
-
-  Hasil dari model yang dikembangkan sebagai berikut.
-  
-  ![cf_model best parameter](https://user-images.githubusercontent.com/72246401/137147006-0f45b597-acb4-44c0-b147-0508dd22f2f7.jpg)
-  
-Pada model _baseline_ memiliki nilai akurasi yang cukup baik yaitu 86,25% dan nilai _f1 score_, _recall_, serta _precision_ cukup baik. Setelah dilakukan _Hyper Parameter Tuning_ nilai akurasinya meningkat menjadi 95,25% dan nilai _f1 score_, _recall_, serta _precision_ meningkat dari model _baseline_.
-
-Dari _confusion matriks_ dan _classification report_, dapat dilihat bahwa model yang dikembangkan dengan _Hyper Parameter Tuning_ memiliki nilai _false positif_ serta _false negatif_ di _confusion matriks_ dan nilai _f1 score_, _recall_, serta _precision_ di _classification report_ lebih baik dari model _baseline_. Maka dari itu, maka untuk proyek ini menggunakan model yang dikembangkan dengan _Hyper Parameter Tuning_.
+Dari rekomendasi yang diberikan, rekomendasi dari TF-IDF Vectorizer lebih cocok menurut saya daripada rekomendasi dari CountVectorizer. Karena TF-IDF lebih baik daripada Count Vectorizers karena tidak hanya berfokus pada frekuensi kata yang ada dalam korpus tetapi juga memberikan pentingnya kata tersebut. Kami kemudian dapat menghapus kata-kata yang kurang penting untuk analisis, sehingga membuat model bangunan kurang kompleks dengan mengurangi dimensi input.
 
 # Referensi:
-[1] https://techno.okezone.com/read/2014/05/13/57/984293/di-indonesia-smartphone-sudah-menjadi-kebutuhan-utama
-
-[2] https://review.bukalapak.com/gadget/7-hal-yang-harus-diperhatikan-sebelum-membeli-smartphone-bekas-2292
-
-[3] https://www.dqlab.id/perbandingan-support-vector-machine-dan-decision-tree
+[1] https://help.netflix.com/id/node/412
 
 
 **---Ini adalah bagian akhir laporan---**
