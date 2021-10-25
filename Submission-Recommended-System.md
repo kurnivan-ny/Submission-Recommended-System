@@ -1,17 +1,13 @@
-# Laporan Proyek Machine Learning - Kurnivan Noer Yusvianto
+# Laporan Proyek Machine Learning Terapan - Kurnivan Noer Yusvianto
 
-## Domain Proyek
-Domain proyek yang dipilih dalam proyek _machine learning_ adalah bisnis dengan judul proyek "Prediksi Harga Ponsel Untuk Menghindari Penipuan".
-
-- Latar Belakang
+- Project Overview
 
 <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/72246401/137119365-bb1eebe2-6f00-4cea-a183-0f25567cc7ce.png">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/72246401/137866422-f7eba1f6-e2b7-4f37-b2f2-d2c0df43cb97.png">
 </p>
 
-Pengguna smartphone Indonesia juga bertumbuh dengan pesat. _Smartphone_ (Ponsel) sudah menjadi kebutuhan primer. Pesatnya pertumbuhan _smartphone_ menjadi fenomena yang tidak bisa dihindari, karena masyarakat membutuhkan informasi dan dipakai juga untuk mengakses internet[[1](https://techno.okezone.com/read/2014/05/13/57/984293/di-indonesia-smartphone-sudah-menjadi-kebutuhan-utama)]. Akibatnya banyak penipuan dengan menjual _smartphone_ yang diatas harga rata-rata.
-
-Dampak dari menjual _smartphone_ yang diatas harga rata-rata menyebabkan pembeli tertipu dengan _smartphone_ bekas yang memiliki spesifikasi yang dibawah rata-rata. Survei harga _smartphone_ bekas di pasaran, belum bisa menentukan apakah _smartphone_ bekas layak mendapatkan harga segitu, Maka dari itu diperlukan pengecekan spesifikasi _smartphone_ agar mendapatkan informasi detail dan dapat digunakan untuk menentukan harga kisarannya[[2](https://review.bukalapak.com/gadget/7-hal-yang-harus-diperhatikan-sebelum-membeli-smartphone-bekas-2292)]. Salah satunya pada proyek ini, dimana akan dibuat sebuah model _machine learning_ untuk mengklasifikasikan kategori _smartphone_ dalam biaya rendah sampai biaya paling tinggi. Dengan adanya model _machine learning_ ini, pembeli dapat mengecek spesifikasi _smartphone_ dan memperkirakan apakah _smartphone_ termasuk dalam kategori biaya rendah, biaya sedang, biaya tinggi, dan biaya sangat tinggi. Implementasi model ini dapat dijalankan pada aplikasi web atau android maupun ios.
+Pada proyek sistem rekomendasi, kita akan membuat sistem rekomendasi movie atau tv show di Netflix. 
+Netflix adalah layanan streaming berbasis langganan yang memungkinkan anggota kami menonton acara TV dan film tanpa iklan di perangkat yang terhubung ke Internet[[1](https://help.netflix.com/id/node/412)]. Setiap hari Netflix dibanjiri oleh penggemar movie atau tv show untuk menonton movie atau tv show yang disukai. 
 
 ## Business Understanding
 
