@@ -48,31 +48,22 @@ Informasi dataset sebagai berikut.
 | Rating Penggunaan | 10.0 (Gold) |
 | Jenis dan Ukuran Berkas | CSV (3.4 MB) |
 
-Pada berkas yang diunduh yakni train.csv terdapat 2.000 baris (records atau jumlah pengamatan) dan 21 kolom dalam dataset. Berdasarkan informasi dari dataset, variabel pada Mobile Price Classification sebagai berikut.
+Pada berkas yang diunduh yakni netflix_titles.csv terdapat 8.807 baris (records atau jumlah pengamatan) dan 12 kolom dalam dataset. Berdasarkan informasi dari dataset, variabel pada Netflix Movies and TV Shows sebagai berikut.
 
 | Variabel | Deskripsi |
 | :--- | :--- |
-| battery_power | Energi total yang dapat disimpan baterai dalam satu waktu diukur dalam mAh |
-| blue | Bluetooth atau tidak |
-| clock_speed | Kecepatan di mana mikroprosesor mengeksekusi instruksi |
-| dual_sim | Dual SIM atau tidak |
-| fc | Resolusi kamera depan (mega piksels) |
-| four_g | 4G atau tidak |
-| int_memory | Memori internal (Gigabytes) |
-| m_dep | Ketebalan ponsel (cm) |
-| mobile_wt | Berat ponsel |
-| n_cores | Jumlah core dalam processor |
-| pc | Resolusi kamera utama (mega pixels) |
-| px_height | Tinggi resolusi piksel |
-| px_width | Lebar resolusi piksel |
-| ram | Random Access Memory (mega byte) |
-| sc_h | Tinggi layar ponsel (cm) |
-| sc_w | Lebar layar ponsel (cm) |
-| talk_time | Waktu terlama satu kali pengisian baterai akan bertahan saat Anda berada |
-| three_g | 3G atau tidak |
-| touch_screen | Layar sentuh atau tidak |
-| wifi | Wifi atau tidak |
-| price_range | Variabel target dengan nilai 0 (low cost), 1 (medium cost), 2 (high cost) dan 3 (very high cost) |
+| show_id | id unik dari setiap pertunjukan |
+| type | Kategori acara, bisa berupa Film atau Acara TV |
+| title | Judul Film / Acara TV |
+| director | Nama sutradara |
+| cast | Nama aktor yang terlibat dalam film / pertunjukan |
+| country | Negara tempat film / acara itu diproduksi |
+| date_added | Tanggal saat acara ditambahkan di Netflix |
+| release_year | Tahun rilis pertunjukan |
+| rating | Tampilkan peringkat di Netflix |
+| duration | Durasi waktu pertunjukan dalam menit |
+| listed_in | Genre acaranya |
+| description | Deskripsi ringkasan |
 
 Untuk mengetahui deskripsi variabel seperti tipe data, sample unik, dan jumlah sample unik sebagai berikut.
 
