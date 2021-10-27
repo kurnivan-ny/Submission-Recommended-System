@@ -172,4 +172,5 @@ Dari precision yang dilihat bahwa precision pada CountVectorizer lebih baik dari
 
 # Referensi:
 [1] https://help.netflix.com/id/node/412
+
 [2] https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e
