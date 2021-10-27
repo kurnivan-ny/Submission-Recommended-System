@@ -137,20 +137,39 @@ Setelah melakukan Persiapan Data _(Data Preparation)_, maka tahap selanjutnya mo
   TF-IDF didasarkan pada logika bahwa kata-kata yang terlalu banyak dalam korpus dan kata-kata yang terlalu jarang keduanya tidak penting secara statistik untuk menemukan suatu pola. Faktor logaritma dalam TF-IDF secara matematis menghukum kata-kata yang terlalu banyak atau terlalu jarang dalam korpus dengan memberikan nilai TF-IDF yang rendah.
   Pada tahap ini, saya menggunakan modul dari scikit-learn yaitu [TF-IDF Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html).
   
+Dari kedua Vectorizer tersebut kemudian akan dibuat sistem rekomendasi _content based filtering_ dengan menggunakan [_consine similiarity_](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html). CountVectorizer dan TF-IDF Vectorizer dengan fungsi stop_words=’english’ berfungsi untuk menghilangkan kata semacam: i, you, the, a, this, is dan sejenisnya. Tujuannya sebelum menghitung cosine similarity, terlebih dahulu data diubah kedalam bentuk vektor.
+
+- Hasil Prediksi
+  
+  Hasil rekomendasi yang diberikan, dibuat sebuah fungsi recomendation untuk memberikan rekomendasi terhadap suatu judul movie atau tv show yang diinputkan (pengalaman pengguna). Kemudian mengambil beberapa data yang memiliki kemiripan (similarity) dan selanjutnya dari bobot berupa tingkat kesamaan diurutkan dari terbesar ke terkecil dan dimasukkan ke variabel sim_scores. Kemudian ditampilkan rekomendasi berupa DataFrame yang berisikan Judul Movie atau TV Show dan _consine similiarity_. Input Movie atau TV Show adalah Story of Kale: When Someone's in Love.
+  - Hasil Prediksi dari CountVectorizer
+    
+    ![countvectorizer](https://user-images.githubusercontent.com/72246401/139031507-4ebdb90e-d1de-4e2a-b984-330d3e411414.jpg)
+    
+  - Hasil Prediksi dari TF-IDF Vectorizer
+  
+    ![TF-IDF Vectorizer](https://user-images.githubusercontent.com/72246401/139031580-21dc596e-7f03-40fd-bcd6-ea7d3d58e745.jpg)
+    
+
 ## Evaluation
-Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan  [_consine similiarity_](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html).
-- _Consine Similiarity_ dari CountVectorizer
+Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan metric _Recommender System Precision_.
 
-![Screenshot (2010)](https://user-images.githubusercontent.com/72246401/138682396-9ea88f41-8c73-4e7f-91e3-59930deb6894.png)
+Precision adalah rasio prediksi benar positif (True Positif) terhadap keseluruhan hasil yang diprediksi positif. Untuk formula _Recommender System Precision_ dapat ditulis sebagai berikut[2](https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e).
 
-- _Consine Similiarity_ dari TF-IDF Vectorizer
+![precision sr](https://user-images.githubusercontent.com/72246401/139031631-4a7fc2c8-7f71-4215-a8ab-c8a563345030.png)
 
-![Screenshot (2012)](https://user-images.githubusercontent.com/72246401/138682391-0432dd5e-9d29-44f2-be2b-3c086fba9d44.png)
+Untuk penerapan pada kode dengan membuat fungsi precision yang terdapat 2 paramter yaitu banyak rekomendasi dan jumlah rekomendasi yang sesuai. Kemudian menggunakan _consine similiarity_ > 0.05.
 
-Dari rekomendasi yang diberikan, rekomendasi dari TF-IDF Vectorizer lebih cocok menurut saya daripada rekomendasi dari CountVectorizer. Karena TF-IDF lebih baik daripada Count Vectorizers karena tidak hanya berfokus pada frekuensi kata yang ada dalam korpus tetapi juga memberikan pentingnya kata tersebut. Kami kemudian dapat menghapus kata-kata yang kurang penting untuk analisis, sehingga membuat model bangunan kurang kompleks dengan mengurangi dimensi input.
+- Precision dari CountVectorizer
+
+  ![precision countvectorizer](https://user-images.githubusercontent.com/72246401/139031630-c3ece154-93d6-4eda-8d01-200e89e93e0f.jpg)
+  
+- Precision dari TF-IDF Vectorizer
+
+  ![precision TF-IDF Vectorizer](https://user-images.githubusercontent.com/72246401/139031574-3fb050e2-7dbb-4e76-93f4-46f4f341075e.jpg)
+
+Dari precision yang dilihat bahwa precision pada CountVectorizer lebih baik daripada TF-IDF Vectorizer. Precision pada CountVectorizer 1.0 artinya 100% sedangkan precision pada TF-IDF Vectorizer 0.6 atau 60%.
 
 # Referensi:
 [1] https://help.netflix.com/id/node/412
-
-
-**---Ini adalah bagian akhir laporan---**
+[2] https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e
