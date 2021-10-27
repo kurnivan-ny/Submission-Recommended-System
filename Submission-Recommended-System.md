@@ -154,7 +154,7 @@ Dari kedua Vectorizer tersebut kemudian akan dibuat sistem rekomendasi _content 
 ## Evaluation
 Pada proyek ini, kami menggunakan evaluasi pada model sistem rekomendasi _Content Based Filtering_ dengan metric _Recommender System Precision_.
 
-Precision adalah rasio prediksi benar positif (True Positif) terhadap keseluruhan hasil yang diprediksi positif. Untuk formula _Recommender System Precision_ dapat ditulis sebagai berikut[2](https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e).
+Precision adalah rasio prediksi benar positif (True Positif) terhadap keseluruhan hasil yang diprediksi positif. Untuk formula _Recommender System Precision_ dapat ditulis sebagai berikut[[2]](https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e).
 
 ![precision sr](https://user-images.githubusercontent.com/72246401/139031631-4a7fc2c8-7f71-4215-a8ab-c8a563345030.png)
 
